@@ -24,6 +24,21 @@ menuToggle.addEventListener("click", () => {
         menuToggle.setAttribute("aria-label", "Open navigation");
     }
 });
+
+/* CLOSE MOBILE MENU AFTER SELECTING A NAV LINK */
+document.querySelectorAll(".nav-menu .links").forEach(link => {
+    link.addEventListener("click", () => {
+        if (navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+
+            menuToggle.setAttribute("aria-label", "Open navigation");
+        }
+    });
+});
+
 // ========================================
 // THEME TOGGLE
 // ========================================
