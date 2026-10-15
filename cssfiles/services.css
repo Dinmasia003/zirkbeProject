@@ -1,0 +1,285 @@
+
+
+
+
+/* ========================================
+   SERVICES SECTION
+======================================== */
+
+.services {
+    padding: 100px 5%;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.services-container {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.services-header {
+    max-width: 700px;
+    margin-bottom: 55px;
+}
+
+.section-eyebrow {
+    margin-bottom: 14px;
+    color: var(--text-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: var(--text-gold);
+}
+
+.services-description {
+    max-width: 600px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* ========================================
+   SERVICES GRID
+======================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* ========================================
+   SERVICE CARDS
+======================================== */
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 300px;
+    padding: 32px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--secondary);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-top-color: var(--primary);
+}
+
+/* Service Number */
+
+.service-number {
+    display: block;
+    margin-bottom: 28px;
+    color: var(--text-gold);
+    font-size: 0.80rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Service Title */
+
+.service-card h3 {
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* Service Description */
+
+.service-card p {
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+/* Service Link */
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    color: var(--text-gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.service-link span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--primary);
+}
+
+.service-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* ========================================
+   SERVICES FOOTER
+======================================== */
+
+.services-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 50px;
+    padding: 30px 32px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.services-footer p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.services-cta {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 14px 22px;
+    background: var(--secondary);
+    color: var(--text-white);
+    border: 1px solid var(--secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.services-cta:hover {
+    background: var(--primary);
+    color: var(--text-white);
+    border-color: var(--primary);
+}
+
+/* ========================================
+   TABLET RESPONSIVENESS
+======================================== */
+
+@media (max-width: 1000px) {
+    .services {
+        padding: 80px 5%;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .service-card {
+        min-height: 290px;
+    }
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+    .services {
+        padding: 65px 6%;
+    }
+
+    .services-header {
+        margin-bottom: 35px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+    }
+
+    .services-description {
+        font-size: 0.95rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 26px 24px;
+    }
+
+    .service-number {
+        margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .services-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        margin-top: 35px;
+        padding: 25px 22px;
+    }
+
+    .services-cta {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .services,
+    .service-card,
+    .service-link,
+    .service-link span,
+    .services-cta {
+        transition: none;
+    }
+
+    .service-card:hover {
+        transform: none;
+    }
+}

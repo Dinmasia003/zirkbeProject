@@ -1,0 +1,173 @@
+@import url(nav.css);
+@import url(hero.css);
+
+/* ========================================
+   ZIRKBE SYNERGY — COLOR SYSTEM
+   ======================================== */
+
+/* ========================================
+   LIGHT THEME — DEFAULT
+   ======================================== */
+
+:root {
+
+    /* ================================
+       BRAND COLORS
+       ================================ */
+
+    --primary: #0B1F3A;              /* Deep Navy */
+    --primary-light: #163A63;        /* Light Navy */
+    --primary-dark: #061426;         /* Dark Navy */
+
+    --secondary: #1E66D6;            /* Bright Brand Blue */
+    --secondary-light: #60A5FA;      /* Light Blue */
+    --secondary-dark: #0B3D91;       /* Deep Blue */
+
+    --accent: #3B82F6;               /* Accent Blue */
+    --accent-light: #93C5FD;         /* Soft Blue */
+    --accent-dark: #2563EB;          /* Strong Blue */
+
+
+    /* ================================
+       TEXT
+       ================================ */
+
+    --text-primary: #0B1F3A;         /* Main Navy Text */
+    --text-secondary: #475569;       /* Slate Text */
+    --text-muted: #64748B;           /* Muted Text */
+
+    --text-white: #FFFFFF;
+    --text-blue: #1E66D6;
+
+
+    /* ================================
+       BACKGROUNDS
+       ================================ */
+
+    --bg-primary: #FFFFFF;            /* Main White */
+    --bg-secondary: #F8FAFC;         /* Very Light Blue-Gray */
+    --bg-tertiary: #EEF4F9;          /* Soft Blue-Gray */
+
+    --bg-card: #FFFFFF;
+
+    --bg-footer: #F1F5F9; /* Soft Light Gray Footer */
+    --bg-navbar: rgba(255, 255, 255, 0.94);
+
+      /* FOOTER-SPECIFIC COLORS */
+    --footer-text: #0F172A;
+    --footer-text-secondary: #334155;
+    --footer-text-muted: #475569;
+    --footer-border: #D7DEE8;
+
+
+    /* ================================
+       BORDERS
+       ================================ */
+
+    --border-color: #D8E0E8;
+    --border-light: #E8EEF4;
+    --border-blue: #B8D4F5;
+
+
+    /* ================================
+       SHADOWS
+       ================================ */
+
+    --shadow-sm: 0 2px 8px rgba(11, 31, 58, 0.08);
+
+    --shadow-md: 0 8px 24px rgba(11, 31, 58, 0.12);
+
+    --shadow-lg: 0 16px 40px rgba(11, 31, 58, 0.16);
+
+
+    /* ================================
+       HERO IMAGE OVERLAY
+       ================================ */
+
+    --hero-image-overlay: rgba(6, 20, 38, 0.38);
+    --hero-mobile-overlay: rgba(6, 20, 38, 0.55);
+}
+
+
+/* ========================================
+   DARK THEME
+   ======================================== */
+
+[data-theme="dark"] {
+
+    /* ================================
+       BRAND COLORS
+       ================================ */
+
+    --primary: #0B1F3A;              /* Deep Navy */
+    --primary-light: #163A63;        /* Light Navy */
+    --primary-dark: #061426;         /* Dark Navy */
+
+    --secondary: #1E66D6;            /* Bright Brand Blue */
+    --secondary-light: #60A5FA;      /* Light Blue */
+    --secondary-dark: #0B3D91;       /* Deep Blue */
+
+    --accent: #60A5FA;               /* Light Accent Blue */
+    --accent-light: #93C5FD;         /* Soft Blue */
+    --accent-dark: #3B82F6;          /* Strong Blue */
+
+
+    /* ================================
+       TEXT
+       ================================ */
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+
+    --text-white: #FFFFFF;
+    --text-blue: #60A5FA;
+
+
+    /* ================================
+       BACKGROUNDS
+       ================================ */
+
+    --bg-primary: #061426;            /* Main Dark Navy */
+    --bg-secondary: #0B1F3A;         /* Navy */
+    --bg-tertiary: #102B4F;           /* Lighter Navy */
+
+    --bg-card: #102B4F;
+
+    --bg-footer: #030B16;
+
+    --bg-navbar: rgba(6, 20, 38, 0.94);
+
+    /* FOOTER-SPECIFIC COLORS */
+   --footer-text: #FFFFFF;
+   --footer-text-secondary: #CBD5E1;
+   --footer-text-muted: #94A3B8;
+   --footer-border: #1D4E80;
+
+
+    /* ================================
+       BORDERS
+       ================================ */
+
+    --border-color: #1D4E80;
+    --border-light: #163A63;
+    --border-blue: #1E66D6;
+
+
+    /* ================================
+       SHADOWS
+       ================================ */
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.20);
+
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.28);
+
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.36);
+
+
+    /* ================================
+       HERO IMAGE OVERLAY
+       ================================ */
+
+    --hero-image-overlay: rgba(0, 0, 0, 0.48);
+}

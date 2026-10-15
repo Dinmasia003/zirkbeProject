@@ -1,0 +1,840 @@
+.hero {
+    position: relative;
+    min-height: calc(100vh - 80px);
+
+    background: var(--bg-primary);
+
+    overflow: hidden;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.hero-container {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    /* padding: 20px 0px; */
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: stretch;
+}
+
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+    margin-left: max(
+        10px,
+        calc((100vw - 1400px) / 2 + 10px)
+    );
+    width: 100%;
+    padding: 70px 0;
+}
+
+.hero-eyebrow {
+    margin-bottom: 10px;
+
+    color: #1677FF;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+
+    text-transform: uppercase;
+}
+
+.hero-title {
+    margin-bottom: 24px;
+
+    color: var(--secondary-light);
+
+    font-size: clamp(2.5rem, 7vw, 5.2rem);
+    font-weight: 800;
+
+    line-height: 1.05;
+    letter-spacing: -2px;
+
+    text-transform: uppercase;
+}
+
+.hero-title span {
+    display: block;
+
+    color: #1677FF;
+}
+
+.hero-description {
+    max-width: 570px;
+
+    margin-bottom: 32px;
+
+    color: var(--text-secondary);
+
+    font-size: 1.05rem;
+    font-weight: 400;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 13px 24px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-btn-primary {
+    background: var(--primary-dark);
+
+    color: var(--text-white);
+
+    border: 1px solid var(--border-color);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-btn-primary:hover {
+    background: var(--secondary-light);
+
+    border-color: var(--secondary-light);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    border: 1px solid var(--border-color);
+}
+
+.hero-btn-secondary:hover {
+    background: var(--primary);
+
+    color: var(--text-white);
+
+    border-color: var(--primary);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ========================================
+   HERO IMAGE
+======================================== */
+
+.hero-image {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 80px);
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+    background: var(--bg-tertiary);
+    box-shadow: none;
+}
+
+/* Curved divider between text and image */
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    top: -5%;
+    left: -90px;
+
+    width: 180px;
+    height: 110%;
+
+    background: var(--bg-primary);
+
+    border-radius: 50%;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: var(--hero-image-overlay);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   HERO IMAGE SLIDESHOW
+======================================== */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0;
+
+    z-index: 1;
+
+    transition: opacity 1.4s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+
+
+/* ========================================
+   HERO INFO CARD
+======================================== */
+
+.hero-info-card {
+    position: absolute;
+
+    right: 28px;
+    bottom: 28px;
+
+    z-index: 5;
+
+    width: 220px;
+
+    padding: 20px;
+
+    background: rgba(6, 20, 38, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-left: 3px solid var(--secondary);
+
+    border-radius: 4px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.hero-info-label {
+    margin-bottom: 8px;
+
+    color: var(--text-gold);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.hero-info-text {
+    color: var(--text-white);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   HERO SERVICES STRIP
+======================================== */
+
+.hero-services {
+    position: absolute;
+
+    left: 5%;
+    bottom: 0;
+
+    z-index: 10;
+
+    width: 90%;
+    max-width: 1260px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background: var(--bg-navbar);
+
+    border-top: 1px solid var(--border-color);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.hero-service {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 82px;
+
+    padding: 14px 22px;
+
+    border-right: 1px solid var(--border-color);
+}
+
+.hero-service:last-child {
+    border-right: none;
+}
+
+.hero-service > span {
+    color: var(--text-gold);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.hero-service h3 {
+    margin-bottom: 3px;
+
+    color: var(--text-primary);
+
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.hero-service p {
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+}
+
+
+/* ========================================
+   SCROLL INDICATOR
+======================================== */
+
+.hero-scroll {
+    position: absolute;
+
+    right: 5%;
+    bottom: 105px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+}
+
+.hero-scroll:hover {
+    color: var(--text-gold);
+}
+
+.scroll-arrow {
+    font-size: 1rem;
+
+    animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE HERO
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .hero-container {
+        min-height: calc(100vh - 80px);
+
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+
+        padding: 0;
+    }
+
+
+    .hero-content {
+        max-width: 600px;
+
+        margin-left: 30px;
+
+        padding: 50px 25px 50px 0;
+    }
+
+
+    .hero-title {
+        font-size: clamp(2.8rem, 5vw, 4rem);
+        line-height: 1.05;
+    }
+
+
+    .hero-description {
+        max-width: 500px;
+
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+
+    .hero-image {
+        min-height: calc(100vh - 80px);
+    }
+
+
+    /* Keep the curved divider, but make it smaller */
+    .hero-image::before {
+        left: -80px;
+
+        width: 170px;
+    }
+
+
+    .hero-info-card {
+        right: 25px;
+        bottom: 25px;
+
+        padding: 16px 18px;
+    }
+
+
+    .hero-services {
+        padding: 18px 30px;
+    }
+    .hero-info-card {
+        display: none;
+    }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+
+@media (max-width: 850px) {
+
+   
+    .hero-container {
+        position: relative;
+
+        min-height: calc(100vh - 80px);
+
+        display: block;
+
+        padding: 0;
+    }
+
+
+    /* Image becomes the background */
+    .hero-image {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+
+        z-index: 1;
+    }
+
+
+    /* Remove the curved desktop divider */
+    .hero-image::before {
+        display: none;
+    }
+
+
+    /* Light dark overlay for text readability */
+    .hero-image::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        z-index: 2;
+        background: var(--hero-image-overlay);
+
+        pointer-events: none;
+    }
+
+
+    /* Put text over the image */
+    .hero-content {
+        position: relative;
+
+        z-index: 5;
+
+        width: 100%;
+        max-width: none;
+
+       margin: 0;
+
+        min-height: calc(100vh - 80px);
+
+        padding: 80px 24px 60px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: var(--hero-mobile-overlay);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+    .hero-scroll {
+        display: none;
+    }
+
+    .hero-content .hero-title {
+        color: var(--text-white);
+        font-size: clamp(2.8rem, 10vw, 4.2rem);
+        line-height: 1.05;
+        max-width: 700px;
+    }
+
+    .hero-content .hero-description {
+        color: var(--text-white);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+    }
+    .hero-content .hero-buttons {
+        justify-content: center;
+    }
+    .hero-content .hero-btn-primary {
+        background:var(--secondary);
+        color: var(--text-white);
+        border: 1px solid var(--secondary);
+
+    }
+
+    .hero-content .hero-btn-secondary {
+        color: var(--text-white);
+    }
+     
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 720px;
+        background: var(--bg-primary);
+    }
+
+    .hero-container {
+        position: relative;
+
+        min-height: 720px;
+
+        display: block;
+
+        padding: 0;
+    }
+
+    .hero-image {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+        min-height: 720px;
+
+        border: none;
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+    .hero-image::after {
+        background: var(--hero-image-overlay);
+    }
+
+    .hero-content {
+        position: absolute;
+        inset: auto 0 0;
+
+        z-index: 6;
+
+        width: 100%;
+        max-width: none;
+
+        padding: 45px 6% 55px;
+
+        background: linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(6, 20, 38, 0.18) 15%,
+            rgba(6, 20, 38, 0.65) 55%,
+            rgba(6, 20, 38, 0.92) 100%
+        );
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 12px;
+
+        font-size: 0.65rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    .hero-title {
+        margin-bottom: 16px;
+
+        color: var(--text-white);
+
+        font-size: clamp(2.5rem, 11vw, 4rem);
+
+        line-height: 0.98;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-title span {
+        color: var(--text-gold);
+    }
+
+    .hero-description {
+        margin-bottom: 22px;
+
+        color: var(--text-secondary);
+
+        font-size: 0.9rem;
+
+        line-height: 1.65;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .hero-btn {
+        min-height: 46px;
+
+        padding: 11px 18px;
+
+        font-size: 0.78rem;
+    }
+
+    .hero-image {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+        min-height: 720px;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+    .hero-image::before {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(6, 20, 38, 0.05) 0%,
+                rgba(6, 20, 38, 0.15) 40%,
+                rgba(6, 20, 38, 0.65) 72%,
+                rgba(6, 20, 38, 0.96) 100%
+            );
+    }
+
+    .hero-image::after {
+        display: none;
+    }
+
+    .hero-services {
+        display: none;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-container {
+        min-height: 680px;
+    }
+
+    .hero-image {
+        min-height: 680px;
+    }
+
+    .hero-content {
+        padding-bottom: 105px;
+    }
+
+    .hero-title {
+        font-size: 2.45rem;
+    }
+
+    .hero-description {
+        font-size: 0.84rem;
+    }
+
+    .hero-btn {
+        padding: 10px 15px;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-image img {
+        transition: opacity 0.3s ease;
+        transform: none;
+    }
+
+    .scroll-arrow {
+        animation: none;
+    }
+}
+
+
+
+/* ========================================
+   HERO CONTENT ENTRANCE ANIMATION
+======================================== */
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content .hero-eyebrow {
+    animation: heroFadeUp 0.7s ease-out 0.15s both;
+}
+
+.hero-content .hero-title {
+    animation: heroFadeUp 0.8s ease-out 0.3s both;
+}
+
+.hero-content .hero-description {
+    animation: heroFadeUp 0.8s ease-out 0.45s both;
+}
+
+.hero-content .hero-buttons {
+    animation: heroFadeUp 0.8s ease-out 0.6s both;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero-content .hero-eyebrow,
+    .hero-content .hero-title,
+    .hero-content .hero-description,
+    .hero-content .hero-buttons {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
