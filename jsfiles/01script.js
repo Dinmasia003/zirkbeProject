@@ -626,3 +626,32 @@ document.addEventListener("DOMContentLoaded", () => {
         revealObserver.observe(element);
     });
 });
+
+/* ACTIVE NAVIGATION LINK ON SCROLL */
+const navLinks = document.querySelectorAll(".nav-menu .links");
+const pageSections = document.querySelectorAll(
+    "#home, #about, #services, #projects, #contact"
+);
+
+function updateActiveNavLink() {
+    let currentSection = "home";
+
+    pageSections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+            currentSection = section.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveNavLink);
+window.addEventListener("load", updateActiveNavLink);
