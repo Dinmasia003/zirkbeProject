@@ -68,7 +68,7 @@ const projects = {
         location: "Nigeria",
         year: "2026",
 
-        image: "../images/project2.jpg",
+        image: "../images/image2.jpg",
         imageAlt: "Electrical engineering project",
 
         intro:
@@ -118,7 +118,7 @@ const projects = {
         location: "Nigeria",
         year: "2026",
 
-        image: "../images/project3.jpg",
+        image: "../images/image3.jpg",
         imageAlt: "Engineering and energy infrastructure project",
 
         intro:
@@ -168,7 +168,7 @@ const projects = {
         location: "Nigeria",
         year: "2026",
 
-        image: "../images/project4.jpg",
+        image: "../images/image4.jpg",
         imageAlt: "Commercial solar energy project",
 
         intro:
@@ -218,7 +218,7 @@ const projects = {
         location: "Nigeria",
         year: "2026",
 
-        image: "../images/project5.jpg",
+        image: "../images/image2.jpg",
         imageAlt: "Electrical power infrastructure",
 
         intro:
@@ -268,7 +268,7 @@ const projects = {
         location: "Nigeria",
         year: "2026",
 
-        image: "../images/project6.jpg",
+        image: "../images/image6.jpg",
         imageAlt: "Engineering maintenance project",
 
         intro:
