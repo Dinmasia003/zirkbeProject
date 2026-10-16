@@ -504,6 +504,7 @@
         display: block;
 
         padding: 0;
+         /* background: var(--hero-mobile-overlay); */
     }
 
 
@@ -529,14 +530,18 @@
     /* Light dark overlay for text readability */
     .hero-image::after {
         content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
 
-        position: absolute;
-        inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(6, 20, 38, 0.45) 0%,
+        rgba(6, 20, 38, 0.55) 40%,
+        rgba(6, 20, 38, 0.75) 100%
+    );
 
-        z-index: 2;
-        background: var(--hero-image-overlay);
-
-        pointer-events: none;
+    pointer-events: none;
     }
 
 
@@ -560,9 +565,9 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: var(--hero-mobile-overlay);
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(3px);
+        background: transparent;
+        /* backdrop-filter: blur(3px); */
+        /* -webkit-backdrop-filter: blur(3px); */
     }
     .hero-scroll {
         display: none;
@@ -608,9 +613,11 @@
     .hero {
         min-height: 720px;
         background: var(--bg-primary);
+        
     }
 
     .hero-container {
+        
         position: relative;
 
         min-height: 720px;
@@ -649,13 +656,7 @@
 
         padding: 45px 6% 55px;
 
-        background: linear-gradient(
-            180deg,
-            transparent 0%,
-            rgba(6, 20, 38, 0.18) 15%,
-            rgba(6, 20, 38, 0.65) 55%,
-            rgba(6, 20, 38, 0.92) 100%
-        );
+        
     }
 
     .hero-eyebrow {
@@ -728,7 +729,20 @@
     }
 
     .hero-image::after {
-        display: none;
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+
+        background: linear-gradient(
+            to bottom,
+            rgba(6, 20, 38, 0.45) 0%,
+            rgba(6, 20, 38, 0.55) 40%,
+            rgba(6, 20, 38, 0.75) 100%
+        );
+
+        pointer-events: none;
+        
     }
 
     .hero-services {
